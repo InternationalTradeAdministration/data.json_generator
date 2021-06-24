@@ -1,7 +1,6 @@
 import json
 
 import msal
-
 import requests
 
 
@@ -27,9 +26,9 @@ SHAREPOINT_ENDPOINT = (
 def get_sharepoint_graph_data():
     """Get new access_token from Azure, use it to make request to endpoint"""
     app = msal.ConfidentialClientApplication(
-        client_id,
+        "client_id",
         authority=AUTHORITY,
-        client_credential=client_secret
+        client_credential="client_secret"
     )
     result = app.acquire_token_for_client(scopes=SCOPE)
 
